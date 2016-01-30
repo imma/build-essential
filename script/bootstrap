@@ -8,6 +8,16 @@ function bootstrap {
       sudo aptitude install -y libffi-dev libssl-dev libreadline-dev build-essential
       ;;
   esac
+
+  pkg ensure security/mozilla-rootcerts
+  mozilla-rootcerts install || true
+
+  pkg ensure misc/getopt
+  pkg ensure net/wget
+  pkg ensure www/curl
+  pkg ensure devel/jq
+  pkg ensure editors/vim
+  pkg ensure devel/git
 }
 
 bootstrap
