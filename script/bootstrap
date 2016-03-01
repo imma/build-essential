@@ -15,7 +15,6 @@ function bootstrap {
   pkg ensure misc/getopt
   pkg ensure net/wget
   pkg ensure www/curl
-  pkg ensure devel/jq
   pkg ensure editors/vim
   pkg ensure devel/git
 }
