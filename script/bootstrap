@@ -10,7 +10,14 @@ function bootstrap {
   esac
 
   pkg ensure security/mozilla-rootcerts
-  mozilla-rootcerts install || true
+  if [[ -d "$PKG_HOME/install/etc/openssl/certs" ]]; then
+    pushd $PKG_HOME/install/etc/openssl/certs
+    mozilla-rootcerts extract
+    mozilla-rootcerts rehash
+    popd
+  else
+    mozilla-rootcerts install
+  fi
 
   pkg ensure misc/getopt
   pkg ensure net/wget
