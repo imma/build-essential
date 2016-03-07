@@ -12,8 +12,11 @@ function bootstrap {
   pkg ensure security/mozilla-rootcerts
   if [[ -d "$PKG_HOME/install/etc/openssl/certs" ]]; then
     pushd $PKG_HOME/install/etc/openssl/certs
-    #mozilla-rootcerts extract
-    #mozilla-rootcerts rehash
+    if [[ ! -f ".done" ]]; then
+      mozilla-rootcerts extract
+      mozilla-rootcerts rehash
+      touch .done
+    fi
     popd
   else
     mozilla-rootcerts install
