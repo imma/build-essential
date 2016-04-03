@@ -4,7 +4,7 @@ function main {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-	for a in getopt wget curl vim git; do
+	for a in getopt wget curl vim git gcc; do
 		if [[ ! -x "$(which $a 2>/dev/null || true)" ]]; then
 			return 1
 		fi
