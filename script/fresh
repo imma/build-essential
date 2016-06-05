@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function main {
-  local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
+  local shome="${_build_essential_home:-"$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"}"
   source "$shome/script/profile"
 
 	for a in getopt wget curl vim git gcc; do
