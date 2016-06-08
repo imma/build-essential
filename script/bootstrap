@@ -25,6 +25,7 @@ function bootstrap {
   pkg ensure misc/getopt
   pkg ensure net/wget
   pkg ensure www/curl
+  pkg ensure devel/gmake
 }
 
 bootstrap
