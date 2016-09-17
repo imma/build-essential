@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function bootstrap {
-  local shome="${_build_essential_home:-"$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
+  local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
 
   case "$(uname -s)" in
     Linux)
