@@ -26,6 +26,7 @@ function bootstrap {
   pkg ensure net/wget
   pkg ensure www/curl
   pkg ensure devel/gmake
+  pkg ensure devel/gettext-tools
 }
 
 bootstrap
